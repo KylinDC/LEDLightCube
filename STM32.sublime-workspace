@@ -171,6 +171,34 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "Hardware/LED/led.c",
+			"settings":
+			{
+				"buffer_size": 529,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "User/main.c",
+			"settings":
+			{
+				"buffer_size": 1536,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "#include \"led.h\"\n\n//////////////////////////////////////////////////////////////////////////////////	 \n//本程序只供学习使用，未经作者许可，不得用于其它任何用途\n//ALIENTEK战舰STM32开发板\n//LED驱动代码	   \n//正点原子@ALIENTEK\n//技术论坛:www.openedv.com\n//修改日期:2012/9/2\n//版本：V1.0\n//版权所有，盗版必究。\n//Copyright(C) 广州市星翼电子科技有限公司 2009-2019\n//All rights reserved									  \n////////////////////////////////////////////////////////////////////////////////// 	   \n\n//初始化PB5和PE5为输出口.并使能这两个口的时钟		    \n//LED IO初始化\nvoid LED_Init(void)\n{\n \n GPIO_InitTypeDef  GPIO_InitStructure;\n 	\n RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB|RCC_APB2Periph_GPIOE, ENABLE);	 //使能PB,PE端口时钟\n	\n GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;				 //LED0-->PB.5 端口配置\n GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 //推挽输出\n GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IO口速度为50MHz\n GPIO_Init(GPIOB, &GPIO_InitStructure);					 //根据设定参数初始化GPIOB.5\n GPIO_SetBits(GPIOB,GPIO_Pin_5);						 //PB.5 输出高\n\n GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;	    		 //LED1-->PE.5 端口配置, 推挽输出\n GPIO_Init(GPIOE, &GPIO_InitStructure);	  				 //推挽输出 ，IO口速度为50MHz\n GPIO_SetBits(GPIOE,GPIO_Pin_5); 						 //PE.5 输出高 \n}\n \n",
+			"file": "/C/Users/lovingdays/Desktop/实验1 跑马灯实验/HARDWARE/LED/led.c",
+			"file_size": 1298,
+			"file_write_time": 129919867840000000,
+			"settings":
+			{
+				"buffer_size": 1118,
+				"line_ending": "Windows",
+				"scratch": true
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -527,8 +555,101 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Hardware/LED/led.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 529,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								451,
+								451
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "User/main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1536,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1385,
+								1385
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 552.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/lovingdays/Desktop/实验1 跑马灯实验/HARDWARE/LED/led.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1118,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"in_converting": true,
+							"origin_encoding": "GB2312",
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 207.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],

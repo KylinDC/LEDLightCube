@@ -23,11 +23,34 @@
 #include "stm32f10x.h"
 #include "led.h"
 #include "delay.h"
+#include "sys.h"
+#include "usart.h"
+#include "stm32f10x.h"
+
 /**
   * @brief  Main program.
   * @param  None
   * @retval None
   */
+
+int main(void)
+{
+    delay_init();
+    LED_Init();
+    while (1)
+    {
+        LED0 = 1;
+        LED1 = 0;
+        delay_ms(300);
+
+        LED0 = 0;
+        LED1 = 1;
+        delay_ms(300);
+    }
+}
+
+
+/**
 int main(void)
 {
   delay_init();
@@ -42,5 +65,6 @@ int main(void)
     delay_ms(5000);
   }
 }
+*/
 
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
