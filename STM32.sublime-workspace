@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"GPIO",
+				"GPIOA"
+			],
+			[
 				"in",
 				"include"
 			],
@@ -171,34 +175,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "Hardware/LED/led.c",
-			"settings":
-			{
-				"buffer_size": 529,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "User/main.c",
-			"settings":
-			{
-				"buffer_size": 1536,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "#include \"led.h\"\n\n//////////////////////////////////////////////////////////////////////////////////	 \n//本程序只供学习使用，未经作者许可，不得用于其它任何用途\n//ALIENTEK战舰STM32开发板\n//LED驱动代码	   \n//正点原子@ALIENTEK\n//技术论坛:www.openedv.com\n//修改日期:2012/9/2\n//版本：V1.0\n//版权所有，盗版必究。\n//Copyright(C) 广州市星翼电子科技有限公司 2009-2019\n//All rights reserved									  \n////////////////////////////////////////////////////////////////////////////////// 	   \n\n//初始化PB5和PE5为输出口.并使能这两个口的时钟		    \n//LED IO初始化\nvoid LED_Init(void)\n{\n \n GPIO_InitTypeDef  GPIO_InitStructure;\n 	\n RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB|RCC_APB2Periph_GPIOE, ENABLE);	 //使能PB,PE端口时钟\n	\n GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;				 //LED0-->PB.5 端口配置\n GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 //推挽输出\n GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IO口速度为50MHz\n GPIO_Init(GPIOB, &GPIO_InitStructure);					 //根据设定参数初始化GPIOB.5\n GPIO_SetBits(GPIOB,GPIO_Pin_5);						 //PB.5 输出高\n\n GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;	    		 //LED1-->PE.5 端口配置, 推挽输出\n GPIO_Init(GPIOE, &GPIO_InitStructure);	  				 //推挽输出 ，IO口速度为50MHz\n GPIO_SetBits(GPIOE,GPIO_Pin_5); 						 //PE.5 输出高 \n}\n \n",
-			"file": "/C/Users/lovingdays/Desktop/实验1 跑马灯实验/HARDWARE/LED/led.c",
-			"file_size": 1298,
-			"file_write_time": 129919867840000000,
-			"settings":
-			{
-				"buffer_size": 1118,
-				"line_ending": "Windows",
-				"scratch": true
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -361,18 +337,49 @@
 	[
 		"/D/GitHub/STM32",
 		"/D/GitHub/STM32/Hardware",
+		"/D/GitHub/STM32/Hardware/Button",
 		"/D/GitHub/STM32/Hardware/LED",
-		"/D/GitHub/STM32/Listings",
 		"/D/GitHub/STM32/User"
 	],
 	"file_history":
 	[
+		"/D/GitHub/Port/STM32F10x_FWLib/src/stm32f10x_usart.c",
+		"/D/STM32/战舰开发板资料/2，标准例程-库函数版本/实验4 串口实验/USER/main.c",
 		"/D/GitHub/STM32/User/main.c",
-		"/D/GitHub/STM32/Hardware/LED/led.h",
+		"/D/GitHub/STM32/Hardware/Button/button.h",
+		"/D/GitHub/STM32/Hardware/Button/button.c",
+		"/D/STM32/STM32F103C8T6-48脚-最小系统资料/STM32F103C8T6--最小系统(客户资料）-1507/STM32F103C8T6例程/基本例程-USART收发/通过USART1 收发数据/USER/main.c",
+		"/D/STM32/STM32F103C8T6-48脚-最小系统资料/STM32F103C8T6--最小系统(客户资料）-1507/STM32F103C8T6例程/基本例程-I0操作_LED流水灯/LED流水灯/USER/main.c",
+		"/D/STM32/STM32F103C8T6-48脚-最小系统资料/STM32F103C8T6--最小系统(客户资料）-1507/STM32F103C8T6例程/基本例程-读芯片ID/芯片ID/USER/main.c",
+		"/D/STM32/STM32F103C8T6-48脚-最小系统资料/STM32F103C8T6--最小系统(客户资料）-1507/STM32F103C8T6例程/基本例程-按键（查询方式）/按键（查询方式）/USER/main.c",
+		"/D/GitHub/STM32/User/点亮LED灯/main.c",
 		"/D/GitHub/STM32/Hardware/LED/led.c",
+		"/D/GitHub/STM32/Hardware/LED/led.h",
+		"/C/Users/lovingdays/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/lovingdays/AppData/Local/Temp/7zO45C09B1F/main.c",
+		"/C/Program Files (x86)/MacType/ini/Default.ini",
+		"/C/Program Files (x86)/MacType/updater.ini",
+		"/C/Users/lovingdays/AppData/Roaming/NexusFont/samples.history",
+		"/C/Users/lovingdays/AppData/Roaming/NexusFont/tags.list",
+		"/C/Users/lovingdays/Desktop/实验1 跑马灯实验/HARDWARE/LED/led.c",
+		"/D/GitHub/STM32/User/stm32f10x_it.h",
+		"/D/GitHub/STM32/Libraries/src/stm32f10x_adc.c",
+		"/C/Users/lovingdays/Desktop/实验1 跑马灯实验/HARDWARE/LED/led.h",
+		"/C/Users/lovingdays/Desktop/实验1 跑马灯实验/USER/main.c",
+		"/G/清翔电子 QX-MCS51资料盘/10.开发板配套C实验例程100多个/【实验2】点亮四个LED（方法1）/LED.c",
+		"/D/GitHub/STM32/User/stm32f10x_conf.h",
+		"/G/清翔电子 QX-MCS51资料盘/10.开发板配套C实验例程100多个/【实验8】流水灯1/led.c",
+		"/G/清翔电子 QX-MCS51资料盘/10.开发板配套C实验例程100多个/【实验4】一个LED闪烁/yidengshanshuo.c",
+		"/G/清翔电子 QX-MCS51资料盘/10.开发板配套C实验例程100多个/【实验10】流水灯3/led.c",
+		"/G/清翔电子 QX-MCS51资料盘/10.开发板配套C实验例程100多个/【实验1】点亮第一个发光二极管/led.c",
+		"/G/清翔电子 QX-MCS51资料盘/10.开发板配套C实验例程100多个/【实验9】流水灯2/led.c",
+		"/C/Users/lovingdays/AppData/Local/Temp/7zO4B44E5D8/main函数源码-mini开发板.c",
+		"/G/清翔电子 QX-MCS51资料盘/10.开发板配套C实验例程100多个/【实验3】点亮四个LED（方法2）/led.c",
+		"/D/GitHub/STM32/System/delay/delay.c",
+		"/D/GitHub/STM32/.gitignore",
 		"/D/GitHub/STM32/Listings/startup_stm32f10x_md.lst",
 		"/C/Users/lovingdays/AppData/Roaming/Sublime Text 3/Packages/Theme - Default/Default.sublime-theme",
-		"/C/Users/lovingdays/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Users/lovingdays/AppData/Roaming/Sublime Text 3/Packages/SidebarSeparator/SidebarSeparator.sublime-settings",
 		"/C/Users/lovingdays/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
 		"/C/Users/lovingdays/AppData/Roaming/Sublime Text 3/Packages/User/Side Bar.sublime-settings",
@@ -463,38 +470,7 @@
 		"/C/Users/lovingdays/Desktop/56.conf",
 		"/C/Users/lovingdays/Desktop/新建文件夹/Surge 配置文件/surge_proxy.conf",
 		"/C/Users/lovingdays/Desktop/SSEncrypt.module",
-		"/C/Users/lovingdays/Desktop/新建文件夹/surge_main.conf",
-		"/C/Users/lovingdays/Desktop/108.conf",
-		"/C/Users/lovingdays/Desktop/110.conf",
-		"/C/Users/lovingdays/Desktop/abclite11.1.conf.1.conf",
-		"/C/Users/lovingdays/Desktop/abclite11.1.conf",
-		"/G/SBB-master/111111/SBB.py",
-		"/C/Users/lovingdays/Desktop/SBB-master/Readme.md",
-		"/C/Users/lovingdays/Dropbox/feedly.opml",
-		"/C/Users/lovingdays/Dropbox/应用/FarBox/inlovingdays.farbox.com/自我介绍.md",
-		"/F/feedly订阅备份.opml",
-		"/C/Users/lovingdays/Desktop/悲情城市/City.of.Sadness.1989.DVDRip.DivX.AC3.2.1ch.CD1-Cyndi.chs.srt",
-		"/C/Users/lovingdays/Desktop/A.City.Of.Sadness.1989.DVDRip.XviD-WRD.Chs/wrd-cityos-cd1.srt",
-		"/C/Users/lovingdays/Desktop/wei_rss/rss.py",
-		"/C/Users/lovingdays/Desktop/wei_rss/from selenium import webdriver",
-		"/C/Windows/System32/drivers/etc/hosts",
-		"/E/Films/Kung Fury 2015 HDRip XviD-Hasselhoff.XLSub.srt",
-		"/D/GitHub/musicbox/NEMbox/menu.py",
-		"/D/GitHub/musicbox/NEMbox/player.py",
-		"/E/Documentary/The.Story.of.Film-A.Odyssey/The.Story.of.Film-A.Odyssey.8of15.HDTV.720p.Legendado.PT-BR.sub",
-		"/E/Documentary/The.Story.of.Film-A.Odyssey/The.Story.of.Film-A.Odyssey.8of15.HDTV.720p.Legendado.PT-BR.idx",
-		"/C/Users/lovingdays/Desktop/[夏日時光機Summer.Time.Machine.Blues][本廣克行].2005.cht.SRT",
-		"/C/Users/lovingdays/Desktop/夏日時光機.srt",
-		"/C/Users/lovingdays/AppData/Local/Netease/CloudMusic/Cache/Cache/index.dat",
-		"/C/Users/lovingdays/Desktop/setup.py",
-		"/D/GitHub/musicbox/NEMbox/__init__.py",
-		"/C/Users/lovingdays/hai/projects/skeleton/NAME/game.py",
-		"/C/Users/lovingdays/hai/projects/skeleton/tests/NAME_test.py",
-		"/C/Users/lovingdays/hai/projects/skeleton/NAME/__init__.py",
-		"/C/Users/lovingdays/hai/projects/skeleton/setup.py",
-		"/C/Users/lovingdays/Desktop/1/1/setup.py",
-		"/C/Program Files/Python27/Lib/site-packages/pypm/__init__.py",
-		"/C/Users/lovingdays/hai/exl.py"
+		"/C/Users/lovingdays/Desktop/新建文件夹/surge_main.conf"
 	],
 	"find":
 	{
@@ -555,101 +531,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "Hardware/LED/led.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 529,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								451,
-								451
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "User/main.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1536,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1385,
-								1385
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 552.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/lovingdays/Desktop/实验1 跑马灯实验/HARDWARE/LED/led.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1118,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"in_converting": true,
-							"origin_encoding": "GB2312",
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 207.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],

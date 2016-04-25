@@ -31,7 +31,6 @@
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_usart.h"
 
-/**      注释不需要的库函数
 #include "stm32f10x_adc.h"
 #include "stm32f10x_bkp.h"
 #include "stm32f10x_can.h"
@@ -51,7 +50,7 @@
 #include "stm32f10x_spi.h"
 #include "stm32f10x_tim.h"
 #include "stm32f10x_wwdg.h"
-*/
+
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/

@@ -227,7 +227,7 @@
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -373,7 +373,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD, USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Libraries\CMSIS;.\Libraries\src;.\System\delay;.\System\sys;.\System\usart;.\User;.\Libraries\inc;.\Hardware\LED</IncludePath>
+              <IncludePath>.\Libraries\CMSIS;.\Libraries\src;.\System\delay;.\System\sys;.\System\usart;.\User;.\Libraries\inc;.\Hardware\LED;.\Hardware\Button;.\Hardware\HT1632C</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -520,6 +520,16 @@
               <FileName>led.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Hardware\LED\led.h</FilePath>
+            </File>
+            <File>
+              <FileName>HT1632C.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\HT1632C\HT1632C.c</FilePath>
+            </File>
+            <File>
+              <FileName>HT1632C.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\HT1632C\HT1632C.h</FilePath>
             </File>
           </Files>
         </Group>
