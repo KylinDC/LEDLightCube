@@ -41,8 +41,8 @@ void HT1632C_Writer_CMD(unsigned char cmd)
 }
 
 void HT1632C_Writer_DATA(unsigned char Addr, unsigned char Data)
-{	
-	if(Addr < 0x80)
+{
+	if (Addr < 0x80)
 	{
 		CS1_low;
 		HT1632C_Writer(0xa0, 3, CMD);
@@ -50,7 +50,7 @@ void HT1632C_Writer_DATA(unsigned char Addr, unsigned char Data)
 		HT1632C_Writer(Data, 8, DAT);
 		CS1_high;
 	}
-	else 
+	else
 	{
 		CS2_low;
 		HT1632C_Writer(0xa0, 3, CMD);
@@ -60,18 +60,34 @@ void HT1632C_Writer_DATA(unsigned char Addr, unsigned char Data)
 	}
 }
 
-void HT1632C_Writer_AllDATA(unsigned char Addr, unsigned char *p, unsigned char cnt) //??????????,cnt???????,?8??
+void HT1632C_Writer_AllDATA(unsigned char Addr, unsigned char *p, unsigned char cnt)
 {
-	unsigned char i;
-	CS_low;
-	HT1632C_Writer(0xa0, 3,CMD);
-	HT1632C_Writer(Addr << 1, 7,CMD);
-	for (i = 0; i < cnt; i++)
+	if (Addr < 0x80)
 	{
-		HT1632C_Writer(*p, 8,DAT);
-		p++;
+		unsigned char i;
+		CS1_low;
+		HT1632C_Writer(0xa0, 3, CMD);
+		HT1632C_Writer(Addr << 1, 7, CMD);
+		for (i = 0; i < cnt; i++)
+		{
+			HT1632C_Writer(*p, 8, DAT);
+			p++;
+		}
+		CS1_high;
 	}
-	CS_high;
+	else
+	{
+		unsigned char i;
+		CS2_low;
+		HT1632C_Writer(0xa0, 3, CMD);
+		HT1632C_Writer(Addr << 1, 7, CMD);
+		for (i = 0; i < cnt; i++)
+		{
+			HT1632C_Writer(*p, 8, DAT);
+			p++;
+		}
+		CS2_high;
+	}
 }
 
 void HT1632C_clr(void)
@@ -88,7 +104,6 @@ void HT1632C_clr(void)
 void HT1632C_Init(void)
 {
 	CS_high;
-//	CS2_high;
 	WR_high;
 	DATA_high;
 	HT1632C_Writer_CMD(SYS_DIS);

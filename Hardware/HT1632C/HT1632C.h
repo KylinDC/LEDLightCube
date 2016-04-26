@@ -48,6 +48,7 @@ void HT1632C_Writer(unsigned char Data, unsigned char cnt, unsigned char type);
 void HT1632C_Writer_CMD(unsigned char cmd);
 void HT1632C_Writer_DATA(unsigned char Addr, unsigned char Data);
 void HT1632C_Writer_AllDATA(unsigned char Addr, unsigned char *p, unsigned char cnt);
+void HT1632C_Writer_AllDATA_2(unsigned char Addr, unsigned char *p, unsigned char cnt);
 void HT1632C_clr(void);
 void HT1632C_Init(void);
 #endif
