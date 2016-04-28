@@ -8,5 +8,6 @@
 #define DATA PBout(0)
 
 void LED_Init(void);
+void My_USART1_Init(void);
 
 #endif

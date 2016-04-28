@@ -28,7 +28,7 @@
 #define	RC_MASTER_MODE      0X18	   		//内部RC时钟
 #define	EXT_CLK_MASTER_MODE	0X1C   			//外部时钟
 #define COM_OPTION          0X20		   	//8COM，NMOS模式
-#define PWM_DUTY            0XA9			//PWM亮度控制(0xA0~0xAF)
+#define PWM_DUTY            0XAD			//PWM亮度控制(0xA0~0xAF)
 
 #define	CMD                 1				//1代表发送命令，0为数据
 #define	DAT                 0

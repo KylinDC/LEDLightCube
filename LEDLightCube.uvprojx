@@ -472,11 +472,6 @@
           <GroupName>System</GroupName>
           <Files>
             <File>
-              <FileName>usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\System\usart\usart.c</FilePath>
-            </File>
-            <File>
               <FileName>delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\System\delay\delay.c</FilePath>
