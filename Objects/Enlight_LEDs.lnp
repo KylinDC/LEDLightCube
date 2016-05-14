@@ -1,0 +1,20 @@
+--cpu Cortex-M3
+".\objects\startup_stm32f10x_md.o"
+".\objects\core_cm3.o"
+".\objects\system_stm32f10x.o"
+".\objects\stm32f10x_gpio.o"
+".\objects\stm32f10x_rcc.o"
+".\objects\misc.o"
+".\objects\stm32f10x_usart.o"
+".\objects\stm32f10x_dbgmcu.o"
+".\objects\delay.o"
+".\objects\sys.o"
+".\objects\main.o"
+".\objects\stm32f10x_it.o"
+".\objects\usart1.o"
+".\objects\gpio.o"
+".\objects\ht1632c.o"
+--library_type=microlib --strict --scatter ".\Objects\Enlight_LEDs.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\Enlight_LEDs.map" -o .\Objects\Enlight_LEDs.axf

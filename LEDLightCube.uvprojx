@@ -373,7 +373,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD, USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Libraries\CMSIS;.\Libraries\src;.\System\delay;.\System\sys;.\System\usart;.\User;.\Libraries\inc;.\Hardware\LED;.\Hardware\Button;.\Hardware\HT1632C</IncludePath>
+              <IncludePath>.\Libraries\CMSIS;.\Libraries\src;.\System\delay;.\System\sys;.\System\usart;.\User;.\Libraries\inc;.\Hardware\HT1632C;.\User\GPIO;.\User\USART1</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -501,21 +501,31 @@
               <FileType>5</FileType>
               <FilePath>.\User\stm32f10x_conf.h</FilePath>
             </File>
+            <File>
+              <FileName>usart1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\USART1\usart1.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart1.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\User\USART1\usart1.h</FilePath>
+            </File>
+            <File>
+              <FileName>gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\GPIO\gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\User\GPIO\gpio.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Hardware</GroupName>
           <Files>
-            <File>
-              <FileName>led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Hardware\LED\led.c</FilePath>
-            </File>
-            <File>
-              <FileName>led.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Hardware\LED\led.h</FilePath>
-            </File>
             <File>
               <FileName>HT1632C.c</FileName>
               <FileType>1</FileType>

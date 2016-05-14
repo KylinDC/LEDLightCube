@@ -1,10 +1,32 @@
+/**
+  ******************************************************************************
+  * @file    HT1632C.c
+  * @author  KylinDC(inlovingdays@gmail.com)
+  * @version V1.0
+  * @date    14-May-2016
+  * @brief	 向HT1632C写入数据点亮相应的LED灯
+  ******************************************************************************
+  * @description
+  *
+  * CS    高电平禁止
+  *   	  低电平写入
+  * WR    上升沿DATA写入数据
+  * RD    下降沿DATA读出数据
+  *
+  ******************************************************************************
+  */
+
 #include "HT1632C.h"
 
-
+/**
+  * @brief  写入指令或数据
+  * @param  None
+  * @retval None
+  */
 void HT1632C_Writer(unsigned char Data, unsigned char cnt, unsigned char type)
 {
 	unsigned char i;
-	if (type == CMD)
+	if (type == CMD)	//判断数据是否为指令
 	{
 		for (i = 0; i < cnt; i++)
 		{
@@ -32,6 +54,11 @@ void HT1632C_Writer(unsigned char Data, unsigned char cnt, unsigned char type)
 	}
 }
 
+/**
+  * @brief  写入指令
+  * @param  None
+  * @retval None
+  */
 void HT1632C_Writer_CMD(unsigned char cmd)
 {
 	CS_low;
@@ -40,6 +67,11 @@ void HT1632C_Writer_CMD(unsigned char cmd)
 	CS_high;
 }
 
+/**
+  * @brief  写入单个数据
+  * @param  None
+  * @retval None
+  */
 void HT1632C_Writer_DATA(unsigned char Addr, unsigned char Data)
 {
 	if (Addr < 0x80)
@@ -60,6 +92,11 @@ void HT1632C_Writer_DATA(unsigned char Addr, unsigned char Data)
 	}
 }
 
+/**
+  * @brief  批量写入数据
+  * @param  None
+  * @retval None
+  */
 void HT1632C_Writer_AllDATA(unsigned char Addr, unsigned char *p, unsigned char cnt)
 {
 	if (Addr < 0x80)
@@ -90,6 +127,11 @@ void HT1632C_Writer_AllDATA(unsigned char Addr, unsigned char *p, unsigned char 
 	}
 }
 
+/**
+  * @brief  全灭所有LED灯
+  * @param  None
+  * @retval None
+  */
 void HT1632C_clr(void)
 {
 	unsigned char i;
@@ -101,6 +143,11 @@ void HT1632C_clr(void)
 	CS_high;
 }
 
+/**
+  * @brief  初始化HT1632C芯片
+  * @param  None
+  * @retval None
+  */
 void HT1632C_Init(void)
 {
 	CS_high;
