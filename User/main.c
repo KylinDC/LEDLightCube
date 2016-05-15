@@ -21,7 +21,7 @@
 #include "usart1.h"
 #include "HT1632C.h"
 #include "sys.h"
-
+#include "wdg.h"
 
 unsigned char temp[65];     //定义数组接收来自串口的数据
 unsigned char a = 0;      //接收串口数据计数
@@ -42,9 +42,12 @@ void Enlight()
 		temp1[i] = temp[i + 1];
 	for (t = 0; t < 32 ; t++)
 		temp2[t] = temp[t + 33];
+	if (temp[1] != 0xF2)
+		IWDG_Feed();
 	HT1632C_Writer_AllDATA(0x00, temp1, 32);  //向CS1写入数据
 	HT1632C_Writer_AllDATA(0x80, temp2, 32);  //向CS2写入数据
 	a = 0;
+	
 }
 
 /**
@@ -58,7 +61,7 @@ void USART1_IRQHandler(void)
 	{
 		temp[a] = USART_ReceiveData(USART1);  //接收来自串口的数据
 		a++;
-		if (a >= 65)              //如果数组temp[]存满
+		if (a >= 65)              			  //该组数据是否传输完成
 			Enlight();
 	}
 }
@@ -75,5 +78,10 @@ int main(void)
 	My_USART1_Init();
 	HT1632C_Init();
 	HT1632C_clr();
-	while (1);
+	IWDG_Init(4, 625);
+	while (1)
+	{
+		if (temp[1] != 0xF2)
+		IWDG_Feed();
+	}
 }

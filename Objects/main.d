@@ -32,3 +32,4 @@
 .\objects\main.o: .\System\sys\sys.h
 .\objects\main.o: .\User\USART1\usart1.h
 .\objects\main.o: .\Hardware\HT1632C\HT1632C.h
+.\objects\main.o: .\User\IWDG\wdg.h
